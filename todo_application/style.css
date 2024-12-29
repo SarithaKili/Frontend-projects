@@ -1,0 +1,169 @@
+/* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif; /* Trendy font */
+  background: linear-gradient(135deg, #d51287, #0e3778); /* Softer gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #f9f5f5;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.to-do-app {
+  background: rgba(158, 191, 237, 0.3);
+  width: 100%;
+  max-width: 720px;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(8, 7, 7, 0.4); /* Stronger shadow for depth */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add interactivity */
+}
+
+.to-do-app:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.to-do-app h3 {
+  font-size: 26px;
+  color: #f2f5f7;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #bdb7bb;
+  display: inline-block;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 100%;
+}
+
+#input-box {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 40px;
+  font-size: 16px;
+  margin-right: 10px;
+
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#input-box:focus {
+  border-color: #280d77;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3); /* Glow effect */
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #f34e9b;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 10px 15px rgba(8, 7, 7, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #d3cbd1;
+  transform: translateY(-2px);
+}
+
+/* Task List Styling */
+ul {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  font-size: 18px;
+  padding: 15px 20px 15px 60px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  margin-bottom: 15px;
+  background-color: #fdfdfd;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+ul li:hover {
+  background-color: #f4f6f8;
+  transform: translateX(5px); /* Subtle slide-in effect */
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul li:hover::before {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Highlight pseudo-element */
+}
+
+ul li.checked {
+  color: #888;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(images/checked.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #e8a9c1;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+ul li span:hover {
+  background: #edeef0;
+  transform: scale(1.1);
+  color: #f120af; /* Adds a standout color for hover */
+}
